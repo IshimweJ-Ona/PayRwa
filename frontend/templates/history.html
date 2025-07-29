@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Transaction History</title>
+  <link rel="stylesheet" href="/static/css/history.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+<body>
+<header>
+  <nav class="navbar">
+    <div class="website-title"><div id="logo" class="logo-container"></div></div>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/login">Login</a></li>
+      {% if not user.is_authenticated %}
+        <li><a href="/register">Register</a></li>
+      {% endif %}
+      <li><a href="/pay">Payment</a></li>
+      <li><a href="/history">History</a></li>
+      {% if user.is_authenticated %}
+        <span>(user){{ user.username }}</span>
+        <a href="/logout">Logout</a>
+      {% endif %}
+    </ul>
+  </nav>
+</header>
+<main>
+  <div class="center-container">
+    <h2>Your Transaction History</h2>
+  <table id="historyTable">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Amount</th>
+        <th>Target</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for tx in transactions %}
+      <tr>
+        <td>{{ tx.type }}</td>
+        <td>{{ tx.amount }}</td>
+        <td>{{ tx.paid_to }}</td>
+        <td>{{ tx.date }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  </div>
+</main>
+<script src="/frontend/static/js/history.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="/frontend/static/js/home.js"></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>PayRwa Home</title>
+  <link rel="stylesheet" href="/static/css/home.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+<body>
+<header>
+  <nav class="navbar">
+    <div class="website-title">
+      <div id="logo" class="logo-container"></div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/login">Login</a></li>
+      {% if not user.is_authenticated %}
+        <li><a href="/register">Register</a></li>
+      {% endif %}
+      <li><a href="/pay">Payment</a></li>
+      <li><a href="/history">History</a></li>
+      {% if user.is_authenticated %}
+        <span>(user){{ user.username }}</span>
+        <a href="/logout">Logout</a>
+      {% endif %}
+    </ul>
+  </nav>
+</header>
+<main id="home" class="section">
+  <div class="container">
+    <div id="home-logo" class="logo-container centered"></div>
+    <h2>Welcome to PayRwa</h2>
+    <p>Secure Online Payments with MTN MoMo</p>
+    <p>Fast, Safe, and convenient payments for everyone in Rwanda.</p>
+  </div>
+  <div class="intro">
+    <h2>Why PayRwa?</h2>
+    <ul class="feature-list">
+      <li>Instant mobile payments</li>
+      <li>Facilitate payments</li>
+      <li>User-friendly</li>
+    </ul>
+  </div>
+</main>
+<script src="/static/js/home.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</body>
+</html>
