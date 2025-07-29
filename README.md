@@ -1,4 +1,4 @@
-# PayRwa - [Your Name]
+# PayRwa 
 
 A web application for seamless mobile payments, currency exchange, and QR code transactions in Rwanda.
 
@@ -14,7 +14,7 @@ A web application for seamless mobile payments, currency exchange, and QR code t
 ## Technologies Used
 
 - **Backend:** Python, Flask, MySQL, dotenv
-- **Frontend:** HTML, CSS, JavaScript (Vanilla)
+- **Frontend:** HTML, CSS, JavaScript 
 - **APIs:** MTN MoMo (sandbox), Currency Exchange API
 - **Other:** Jinja2, Flask-Login, Flask-CORS
 
@@ -93,3 +93,5 @@ This project is for educational purposes.
 ---
 
 **For any issues, contact [your.email@domain.com].**
+=======
+# PayRwa
